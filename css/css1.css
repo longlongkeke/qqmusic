@@ -1,0 +1,98 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+#middle_p1,#middle_p2{
+	display:none;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width:100%;
+	height: 100%;
+}
+#top{
+	background:
+		url("../photos/vip-bg.jpg")  no-repeat;
+	background-position:center top;
+	height:900px;
+}
+#vip{
+	background-color:#000000;
+	height:80px;
+	opacity:0.8;
+	
+}
+#vip_logo{
+	width:1200px;
+	height:80px;
+	margin:0 auto;
+	clear:both;
+}
+#vip_logo>img{
+	margin-top:20px;
+	opacity:1;
+		
+}
+span{
+	color:white;
+	font-size:30px;
+	margin-top:20px;
+
+/*	margin-left:10px;*/
+}
+a{
+	color:white;
+	text-decoration: none;
+}
+a:hover{
+	color:darkcyan;
+}
+ul{
+	list-style:none;
+	float:right;
+	color:white;
+	font-size:20px;
+	margin-top:20px;
+	
+}
+h2{
+	color:white;
+	font-size:65px;
+	text-align:center;
+	line-height:500px;
+}
+p{
+	color:white;
+	text-align:center;
+	margin-top: -180px;
+	line-height:110px;
+}
+li{
+	float:left;
+	margin:0px 10px;
+}
+button{
+	background-color:#31c27c;
+	border-radius:50px;
+	width:300px;
+	height:60px;
+	font-size:30px;
+	color:white;
+	border:1px solid #000;
+	margin:0 auto;
+	display:none;
+	
+}
+#middle{
+	width:1520px;
+	height:820px;
+	text-align:center;
+		
+	}
+	@charset "utf-8";
+	
+/* CSS Document */
+

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="CSS/css1.css">
+<script>
+	
+	
+	function time(){
+		var middle_p1=document.getElementById('middle_p1');
+		middle_p1.style.display='block';
+	}
+	function Time(){
+		var middle_p2=document.getElementById('middle_p2');
+		middle_p2.style.display='block';
+	}
+	function Time1(){
+		var button1=document.getElementsByTagName('button')[0];
+		button1.style.display='block';
+	}
+	setTimeout("time()",1000);
+	setTimeout("Time()",2000);
+	setTimeout("Time1()",3000);
+	
+	</script>
+</head>
+
+<body>
+   	<div id="top">
+    <div id="vip">
+	<div id="vip_logo">
+		<img src="images/logo.jpg" width="50" height="40"
+		>
+		<span>
+			绿砖豪华版
+		</span>
+		
+			<ul>
+				<li id="first"><a href="index.html">首页</a></li>
+				<li>特权与等级</li>
+				<li>最新活动</li>
+				<li>年费专区</li>
+				<li>付费音乐包</li>
+			</ul>
+			
+		
+	</div>
+	</div>
+	<div id="middle">
+		<h2 id="middle_p1">绿砖豪华版</h2>
+		<p id="middle_p2">音乐，更优越！</p>
+		<button>立即开通</button>
+	</div>
+	</div>
+	
+</body>
+</html>

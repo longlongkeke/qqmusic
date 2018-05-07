@@ -1,0 +1,270 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/css.css">
+
+<script>
+//1.在赋值符左侧写出window对象的load事件发生时
+window.onload= function(){
+  //检验username文本框里输入值的长度
+  function checkUsername() {
+	var username = el.value;             // 存储username文本框里的值
+	if (username.length < 5) {           // 假如username值长度小于5
+	  elMsg.className = 'warning';       // 改变id为feedback的元素class属性值
+	  elMsg.innerHTML = '长度小于5个字符，请重新输入'; // 改变id为feedback的元素的内容
+    el.focus(); //Firefox中无作用
+	} else {                             
+	  elMsg.innerHTML = '正确'; 
+	}
+  }
+  function checkpassword(){
+	  var password=al.value;
+	  var right=/^\w{6,12}$/;
+	  if (right.test(password)) { 
+		almsg.innerHTML = '正确';
+    al.focus(); //Firefox中无作用
+	} else {                             
+	  almsg.innerHTML = '密码输入错误，必须包括数字，字母，下划线并且为6-12位';
+	}
+	  
+  }
+  
+  //提示用户
+  function tipUsername() {
+	elMsg.className = 'tip';                 //改变id为feedback的元素class属性值
+	elMsg.innerHTML = '用户名应大于5个字符'; //改变id为feedback的元素的内容
+  }
+  
+	function tipPassword(){
+		almsg.innerHTML='密码必须包括数字，字母，下划线并且为6-12位';
+	}
+  var el = document.getElementById('username');
+	var al=document.getElementById('password');
+  var elMsg = document.getElementById('feedback');
+	var almsg=document.getElementById('feeddown');
+	
+  
+  //2.使用事件处理程序写出：当username文本框获得焦点，调用tipUsername函数
+	el.onfocus=tipUsername;
+  //3.使用事件监听器写出：当username文本框失去焦点，调用checkUsername函数
+	el.onblur=checkUsername;
+	al.onfocus=tipPassword;
+	al.onblur=checkpassword;
+	var qq_number = document.getElementById("qq_number");
+	var qq_get = document.getElementById("qq_get");
+	var word=document.getElementById("word");
+	var qq_get1=document.getElementById("qq_get1")
+	word.onmouseover=function(){
+		qq_get1.style.display="block";
+		
+	}
+	word.onmouseout=function(){
+		qq_get1.style.display="none";
+		
+	}
+	qq_number.onmouseover = function(){
+		qq_get.style.display = "block";
+	}
+	qq_number.onmouseout = function(){
+		qq_get.style.display = "none";
+	}
+	var test_number=document.getElementById('test_number');
+	var randomNum;
+	var checkcode="";
+	var str="123456abcdACGR";
+	var arr=str.split('');
+	
+		
+	
+	for(var i=0;i<4;i++){
+		randomNum=Math.floor(Math.random()*arr.length);
+		checkcode+=arr[randomNum];
+		test_number.innerHTML=checkcode;
+	}
+  var day=document.getElementById("day");
+  var night=document.getElementById("night");
+  //1.用事件处理程序写出：单击id为day的超链接时，调用匿名函数，在匿名函数中写出
+  //(1)使用event对象的preventDefault()阻止超链接的单击事件的默认行为
+  //(2)将body元素的文字颜色设置为：#333
+  //(3)将body元素的背景颜色设置为：#f9f9f9
+  day.onclick=function(e){
+	  e.preventDefault();
+	  document.body.style.color="#333";
+	  document.body.style.background='#f9f9f9';
+	  
+  };
+  
+  //2.用事件处理程序写出：单击id为night的超链接时，调用匿名函数，在匿名函数中写出  
+  //(1)将body元素的文字颜色设置为：#ddd
+  //(2)将body元素的背景颜色设置为：#333
+  //(3)使用return false阻止超链接的单击事件的默认行为
+  night.onclick=function(){
+	  document.body.style.color="#ddd";
+	 document. body.style.background="#333";
+	  return false;
+  };
+	var btn=document.getElementsByTagName("button")[0];
+	btn.addEventListener("click",function(){
+		alert("登录成功");
+		window.open("sign on.html");
+		
+	})
+  
+}
+</script>
+
+	
+}
+	
+</script>
+<style type="text/css">
+	#username{
+		border:1px solid #777;
+		border-radius:10px;
+		width:300px;
+		height:50px;
+		border-color:#777;
+		
+	}
+	#password{
+		border:1px solid #777;
+
+		width:300px;
+		height:50px;
+		border-color:#777;
+		border-radius:10px;
+	}
+	button{
+		
+		width:300px;
+		height:50px;
+		background:#3580eb;
+		margin-top:20px;
+		border:1px solid #777;
+
+		border-radius:10px;
+	}
+	#form_top>ul{
+		list-style: none;
+		
+		
+		
+	}
+	#form_top{
+		float:right;
+		margin-top: -960px;
+	}
+	#form_top li{
+		float:left;
+		margin-right:80px;
+	}
+	#qq_get{
+		margin-top: -930px;
+		box-shadow: 0 3px 8px 0 rgba(0,0,0,.12);
+    	margin-right: 400px;
+    	width: 250px;
+    	height: 90px;
+    	float: right;
+		border:1px solid #777;
+		padding: 5px 5px 5px 10px;
+		display:none;
+}
+	#qq_get1{
+		margin-top: -930px;
+    	margin-right: 200px;
+    	width: 100px;
+    	height: 80px;
+    	float: right;
+		border:1px solid #777;
+		display:none;
+		box-shadow: 0 3px 8px 0 rgba(0,0,0,.12);
+	}
+	#test_number{
+		background: #45e01e;
+		height: 30px;
+		width: 50px;
+		margin-top: 5px;
+		color:aliceblue;
+
+	}
+	div#mode {
+	position: fixed;
+	top: 46%;
+	right: 1em;
+	background: #111;
+	text-align: center;
+	width: 3em;
+}
+	div#mode a{
+	color: #3580eb;
+}
+	</style>
+</head>
+
+<body style="position:relative">
+		<div>
+				<img src="photos/01-1.jpg">
+
+		</div>
+		<div id="form_top">
+			<ul>
+				<li><A HREF="index.html" style="color:black">首页</A></li>
+				<li id="qq_number">qq靓号</li>
+				<li>邮箱账号</li>
+				<li id="word">简体中文</li>
+				<li>意见反馈</li>
+				
+			</ul>
+			
+		</div>
+		<div id="qq_get">
+			搜索qq靓号如：“1998”，“520”
+			<br>
+			<hr>
+			生日 星座  爱情  手机
+		</div>
+		<div id="qq_get1">
+			繁體中文 
+			<br>
+			<hr>
+			English
+			
+		</div>
+		<div style="position:absolute; margin-top:-700px; margin-left:900px;">
+			<form name='login'  action='test.asp' method='get' style="position:absolute top:400px right:30px">
+		<div>
+			<h2>用户名</h2>
+			<input type="text" value="" name="text" id="username" placeholder="用户名">
+		</div>
+		<div id="feedback"></div>
+		<div>
+		<h2>密码</h2>
+		<input type="password" value="" name="password"  id="password" placeholder="密码">
+		</div>
+		<div id="feeddown"></div>
+			<h2>验证码</h2>
+			<input type="text" name=""  >
+			
+			<span id="test_number"></span>
+			<br>			
+		<button>注册</button>      
+		</div>
+     		
+	</form>
+		</div>
+		<div id="mode">
+  			<p><a id="day">白天</a></p>
+  			<p><a id="night" href="">夜景</a></p>
+		</div>
+		<div id="index_foot">
+			<p>
+			Copyright && 2017.12.7 All Rights Reserved.
+			版权所有&学号 2511160112   姓名：龙科
+			</p>
+		
+		</div>
+</body>
+</html>
+		
